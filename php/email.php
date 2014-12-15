@@ -62,6 +62,15 @@ function encode_iso88591($string){
 
 	}
 
+
+      function CheckAddress($address) {
+               if ( preg_match("`[0-9a-zA-Z\.\-_]+@[0-9a-zA-z\-]{3,}\.[a-z]{2,4}`" , $address ) )
+               { return TRUE; }
+               else
+               { return FALSE; }
+      }
+
+
 	function Send($to,$title) {
 	    $this->header .= "--";
 		//$title = str_replace('é','=E9', $title);
